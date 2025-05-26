@@ -11,7 +11,7 @@ class Database:
         self.client = MongoClient(mongo_url, tlsAllowInvalidCertificates=True)
         self.db = self.client[db_name]
 
-    def get_collection(self, Fichajes):
-        return self.db[Fichajes]
+    def get_collection(self, fichajes):
+        return self.db[fichajes]
     
 database = Database()

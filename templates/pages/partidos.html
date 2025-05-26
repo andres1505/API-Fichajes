@@ -1,0 +1,90 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="d-flex align-items-center justify-content-center mb-5">
+                <span class="calendar-icon me-3">📅</span>
+                <h2 class="section-title mb-0">Partidos Pasados</h2>
+            </div>
+        </div>
+    </div>
+
+    {% if fixtures %}
+        <div class="row justify-content-center g-4">
+            {% for f in fixtures %}
+                <div class="col-xxl-4 col-xl-5 col-lg-6 col-md-8">
+                    <div class="match-card">
+                        <div class="match-header">
+                            <div class="match-teams">
+                                <h5 class="teams-title">{{ f.name }}</h5>
+                            </div>
+                            <div class="match-status completed">
+                                <span class="status-dot"></span>
+                                <span class="status-text">Finalizado</span>
+                            </div>
+                        </div>
+
+                        <div class="match-content">
+                            <div class="match-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📅</span>
+                                    <div class="info-details">
+                                        <span class="info-label">Fecha:</span>
+                                        <span class="info-value">{{ f.starting_at }}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="match-score">
+                                {% if f.home_score != None and f.away_score != None %}
+                                    <div class="score-container">
+                                        <span class="score-label">Marcador:</span>
+                                        <div class="score-display">
+                                            <span class="score-home">{{ f.home_score }}</span>
+                                            <span class="score-separator">-</span>
+                                            <span class="score-away">{{ f.away_score }}</span>
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="score-unavailable">
+                                        <span class="unavailable-icon">⚠️</span>
+                                        <span class="unavailable-text">Marcador no disponible</span>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="match-footer">
+                            <div class="match-actions">
+                                <button class="action-btn details-btn" type="button">
+                                    <span class="btn-icon">📊</span>
+                                    <span class="btn-text">Ver Detalles</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="empty-state text-center">
+                    <div class="empty-icon">⚽</div>
+                    <h4 class="empty-title">No hay partidos disponibles</h4>
+                    <p class="empty-text">No se encontraron partidos pasados en este momento.</p>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+
+

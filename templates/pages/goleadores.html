@@ -1,0 +1,58 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+
+{% block content %}   
+
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="d-flex align-items-center justify-content-center mb-4">
+                <span class="soccer-icon me-2">⚽</span>
+                <h2 class="section-title mb-0">Máximos Goleadores</h2>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row justify-content-center g-4">
+        {% for goleador in goleadores %}
+            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+                <div class="goleador-card">
+                    <div class="position-badge">
+                        <span class="position-number">{{ forloop.counter }}</span>
+                    </div>
+                    
+                    <div class="player-image-container">
+                        <img src="{{ goleador.image_path }}" 
+                             class="player-image" 
+                             alt="{{ goleador.display_name }}"
+                             onerror="this.src='/static/images/default-player.png'">
+                    </div>
+                    
+                    <div class="card-content">
+                        <h5 class="player-name">{{ goleador.display_name }}</h5>
+                        <div class="player-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Posición:</span>
+                                <span class="stat-value">{{ goleador.position }}</span>
+                            </div>
+                            <div class="stat-item goals-stat">
+                                <span class="stat-label">Goles:</span>
+                                <span class="stat-value goals-number">{{ goleador.total }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="empty-state text-center">
+                    <div class="empty-icon">⚽</div>
+                    <p class="empty-text">No se encontraron goleadores.</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

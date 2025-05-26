@@ -1,0 +1,118 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Inicio - RedGol{% endblock %}
+{% load static %}
+
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center min-vh-75">
+            <div class="col-lg-6">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Conecta con la Pasión del Fútbol
+                    </h1>
+                    <p class="hero-subtitle">
+                        Mantente al día con las últimas noticiasde fichajes y goleadores. 
+                        Tu portal definitivo para el mundo del fútbol.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="/fichajes/" class="btn btn-primary btn-hero me-3">
+                            <i class="fas fa-exchange-alt me-2"></i>Ver Fichajes
+                        </a>
+                        <a href="/partidos/" class="btn btn-outline-light btn-hero">
+                            <i class="fas fa-play me-2"></i>Partidos
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <i class="fas fa-futbol"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <h2 class="section-title">¿Qué hace RedGol especial?</h2>
+                <p class="section-subtitle">Todo lo que necesitas para estar conectado con el fútbol</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h4 class="feature-title">Fichajes al Instante</h4>
+                    <p class="feature-description">
+                        Sé el primero en conocer todos los movimientos del mercado de fichajes. 
+                        Noticias verificadas y actualizadas en tiempo real.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h4 class="feature-title">Maximos Goleadores</h4>
+                    <p class="feature-description">
+                        No te pierdas a los protagonistas del gol! Sigue el desempeño de los goleadores en todos los partidos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 class="feature-title">Partidos Pasados</h4>
+                    <p class="feature-description">
+                        No te pierdas ningún detalle de los encuentros ya disputados. Mantente informado sobre los resultados, goleadores, incidencias y estadísticas de todos los partidos pasados.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="cta-content">
+                    <h3 class="cta-title">¡Únete a la comunidad de RedGol!</h3>
+                    <p class="cta-subtitle">Miles de aficionados ya confían en nosotros para mantenerse actualizados</p>
+                    <!-- <div class="cta-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Usuarios activos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Noticias diarias</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Cobertura en vivo</span>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

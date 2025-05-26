@@ -1,0 +1,347 @@
+/* Título de la sección */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.calendar-icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+/* Tarjeta principal del partido */
+.match-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+}
+
+.match-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border-color: #3498db;
+}
+
+/* Header del partido */
+.match-header {
+    background: linear-gradient(135deg, #3498db, #5dade2);
+    color: white;
+    padding: 20px;
+    position: relative;
+}
+
+.match-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+}
+
+.match-teams {
+    margin-bottom: 12px;
+}
+
+.teams-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.match-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.completed .status-dot {
+    width: 8px;
+    height: 8px;
+    background: #2ecc71;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(46, 204, 113, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(46, 204, 113, 0); }
+}
+
+/* Contenido del partido */
+.match-content {
+    padding: 25px;
+}
+
+/* Información del partido */
+.match-info {
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.info-item:hover {
+    background: #e9ecef;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    min-width: 20px;
+}
+
+.info-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex: 1;
+}
+
+.info-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+.info-value {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Marcador del partido */
+.match-score {
+    margin-bottom: 20px;
+}
+
+.score-container {
+    background: linear-gradient(135deg, #2ecc71, #58d68d);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.2);
+}
+
+.score-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    opacity: 0.9;
+}
+
+.score-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.score-home,
+.score-away {
+    font-size: 2.2rem;
+    font-weight: 700;
+    min-width: 40px;
+    text-align: center;
+}
+
+.score-separator {
+    font-size: 1.8rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+/* Marcador no disponible */
+.score-unavailable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 15px;
+    color: #856404;
+}
+
+.unavailable-icon {
+    font-size: 1.2rem;
+}
+
+.unavailable-text {
+    font-weight: 500;
+}
+
+/* Footer del partido */
+.match-footer {
+    padding: 0 25px 25px;
+}
+
+.match-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, #3498db, #5dade2);
+    color: white;
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.2);
+}
+
+.btn-icon {
+    font-size: 0.9rem;
+}
+
+.btn-text {
+    font-weight: 600;
+}
+
+/* Estado vacío */
+.empty-state {
+    padding: 80px 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.empty-icon {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    opacity: 0.5;
+}
+
+.empty-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.empty-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .calendar-icon {
+        font-size: 2rem;
+    }
+    
+    .match-header {
+        padding: 18px;
+    }
+    
+    .teams-title {
+        font-size: 1.2rem;
+    }
+    
+    .match-content {
+        padding: 20px;
+    }
+    
+    .score-home,
+    .score-away {
+        font-size: 1.8rem;
+    }
+    
+    .score-separator {
+        font-size: 1.4rem;
+    }
+    
+    .match-footer {
+        padding: 0 20px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .match-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .score-display {
+        gap: 10px;
+    }
+    
+    .score-home,
+    .score-away {
+        font-size: 1.6rem;
+    }
+    
+    .action-btn {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.match-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Delay progresivo para las tarjetas */
+.match-card:nth-child(1) { animation-delay: 0.1s; }
+.match-card:nth-child(2) { animation-delay: 0.2s; }
+.match-card:nth-child(3) { animation-delay: 0.3s; }
+.match-card:nth-child(4) { animation-delay: 0.4s; }
+.match-card:nth-child(5) { animation-delay: 0.5s; }
+.match-card:nth-child(6) { animation-delay: 0.6s; }

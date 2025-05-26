@@ -1,0 +1,112 @@
+/* Header Styles */
+.header-main {
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-medium);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white !important;
+    transition: var(--transition);
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: var(--transition);
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 80%;
+}
+
+/* Navbar Toggle */
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Scrolled Navbar */
+.navbar.scrolled {
+    background: rgba(40, 167, 69, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Responsive Design for Header */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+        padding-top: 1rem;
+    }
+    
+    .navbar-nav .nav-link {
+        margin: 0.25rem 0;
+    }
+    
+    .brand-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* Header Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.header-main {
+    animation: slideDown 0.5s ease-out;
+}

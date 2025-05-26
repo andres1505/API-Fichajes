@@ -1,0 +1,39 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Fichajes - RedGol{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4 text-center">Noticias Mercado de Fichajes</h1>
+    <!-- este form es donde los usuarios pueden buscar noticias de fichajes por jugador o equipo. -->
+    <form method="get" class="mb-4 text-center">
+    <input 
+        type="text" 
+        name="q" 
+        class="form-control d-inline w-50" 
+        placeholder="Buscar por jugador o equipo..." 
+        value="{{ request.GET.q }}"
+    >
+    <button type="submit" class="btn btn-primary mt-2">Buscar</button>
+</form>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% if fichajes|length == 0 %}
+            <p class="text-center">No se encontraron resultados para "{{ request.GET.q }}".</p>
+        {% endif %}
+
+        {% for fichaje in fichajes %}
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    <img src="{{ fichaje.imagen }}" class="card-img-top" alt="{{ fichaje.nombre }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ fichaje.nombre }}</h5>
+                        <p class="card-text"><small class="text-muted">{{ fichaje.publicacion }}</small></p>
+                        <a href="{{ fichaje.link }}" class="btn btn-primary" target="_blank">Leer más</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

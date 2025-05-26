@@ -1,0 +1,124 @@
+
+.footer-main {
+    background: var(--dark-color);
+    color: white;
+    padding: 3rem 0 1rem;
+    margin-top: 4rem;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.footer-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: var(--transition);
+    font-size: 1rem;
+}
+
+.social-link:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: var(--shadow-medium);
+    color: white;
+}
+
+.social-link:hover {
+    background: var(--gradient-secondary);
+}
+
+.footer-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0 1rem;
+}
+
+.copyright {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Footer Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.footer-main {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer-main {
+        padding: 2rem 0 1rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    
+    .footer-brand {
+        font-size: 1.3rem;
+    }
+    
+    .footer-text {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-title {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+}
+
+/* Social Links Hover Effects */
+.social-link:nth-child(1):hover {
+    background: #3b5998; /* Facebook */
+}
+
+.social-link:nth-child(2):hover {
+    background: #1da1f2; /* Twitter */
+}
+
+.social-link:nth-child(3):hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Instagram */
+}
+
+.social-link:nth-child(4):hover {
+    background: #ff0000; /* YouTube */
+}
